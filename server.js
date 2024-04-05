@@ -8,8 +8,8 @@ simpsons.forEach((item, index) => {
 
 app.use(express.static("public"));
 
-app.get("/quotes", (request, response) => {
-  const { count = 1, character } = request.query;
+app.get("/quotes/:count/:character", (request, response) => {
+  const { count = 1, character } = request.params;
 
   let countAsNumber = Number(count);
 
